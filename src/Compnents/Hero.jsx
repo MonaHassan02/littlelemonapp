@@ -1,8 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import hero from '../assets/images/hero.jpg'
 import '../App.css'
 
 const Hero = () => {
+  const navigate = useNavigate(); // 2. Initialize the navigate function
+
+    const handleReserveClick = () => {
+        navigate('/reserve');
+    };
   return (
     <>
     <section className='hero-container'>
@@ -16,7 +22,9 @@ const Hero = () => {
             <p>
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist
             </p>
-            <button className='btn-primary'>
+            <button className='btn-primary' 
+              onClick={handleReserveClick}
+            aria-label="On Click"  >
                 Reserve a Table
             </button>
         </div>
