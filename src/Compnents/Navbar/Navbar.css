@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+.nav-container{
+    width: 100%;
+padding: 20px 0;
+background-color: #ffffff;
+}
+.navbar{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Adjusted gap to fit the button better */
+    align-items: center;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    position: relative; /* Required for the underline positioning */
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+/* THE UNDERLINE LOGIC (Hover and Active) */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #495E57; /* Dark Green */
+    transition: width 0.3s ease;
+}
+
+/* Show underline on hover OR when the link is active */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #495E57;
+}
+
+/* THE LOGIN BUTTON SHAPE */
+.nav-links a.nav-login-btn {
+    background-color: #495E57; /* Dark Green */
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a.nav-login-btn:hover {
+    background-color: #33423e; /* Slightly darker on hover */
+    color: #F4CE14; /* Brand yellow text on hover */
+}
+
+/* Disable the underline effect for the login button specifically */
+.nav-links a.nav-login-btn::after {
+    display: none;
+}
+.nav-logo a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+}
+
+.nav-logo img {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Subtle hover effect so the user knows it's clickable */
+.nav-logo img:hover {
+    opacity: 0.9;
+}

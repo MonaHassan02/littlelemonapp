@@ -1,0 +1,546 @@
+/* 1. FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700;800&family=Markazi+Text:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  background-color: #ffffff;
+}
+
+
+
+
+
+
+
+.hero-container {
+  background-color: #495E57; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  gap: 60px;
+  padding: 50px 10% 40px 10%; 
+  position: relative;
+  min-height: 350px;
+}
+
+.hero-content {
+  max-width: 400px;
+  margin-top: 20px; 
+}
+
+.hero-content h1 {
+  font-family: 'Markazi Text', serif;
+  color: #F4CE14; 
+  font-size: 4.5rem;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.hero-content h2 {
+  font-family: 'Markazi Text', serif;
+  color: #EDEFEE;
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  color: #EDEFEE;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  max-width: 320px;
+}
+
+.btn-primary {
+  background-color: #F4CE14;
+  color: #333333;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #dcb912;
+  transform: scale(1.05);
+}
+
+.hero-img {
+  width: 370px;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 16px;
+  
+  position: relative;
+  top: 30px;           
+  margin-bottom: -120px; 
+  z-index: 10;          
+  
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.specials-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 120px 20px 60px 20px; /* Top padding of 120px compensates for the floating Hero image */
+}
+
+.specials-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.specials-top h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  color: #333333;
+}
+
+/* THE GRID */
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 30px;
+}
+
+/* CARD STYLING */
+.special-card {
+  background-color: #EDEFEE;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.price {
+  color: #EE9972; /* The orange/coral price color */
+  font-weight: 700;
+}
+
+.card-content p {
+  font-family: 'Karla', sans-serif;
+  color: #495E57;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.order-btn {
+  background: none;
+  border: none;
+  font-family: 'Karla', sans-serif;
+  font-weight: 800;
+  color: #333333;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  margin-top: auto; /* Pushes button to bottom of card */
+}
+
+
+
+
+.testimonials-container {
+  background-color: #495E57; /* Very light brand orange/cream background */
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.testimonials-container h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 3rem;
+  color: #F4CE14;
+  margin-bottom: 40px;
+}
+
+/* THE GRID */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* INDIVIDUAL CARD */
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stars-container {
+  display: flex;
+  gap: 5px; /* Space between each star */
+  margin-bottom: 10px;
+
+}
+
+.star-icon {
+  width: 18px;  /* Adjust size to match your design */
+  height: 18px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Makes it a circle */
+  object-fit: cover;
+}
+
+.user-info h4 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  color: #495E57;
+}
+
+.testimonial-card p {
+  font-family: 'Karla', sans-serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.4;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 100px 10%;
+  background-color: #ffffff;
+}
+
+.about-content {
+  max-width: 400px;
+}
+
+.about-content h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 4rem;
+  color: #495E57;
+}
+
+.about-content h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2.5rem;
+  color: #F4CE14;
+  margin-bottom: 20px;
+}
+
+/* Image Overlap Logic */
+.about-images {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.about-images img {
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  position: absolute;
+}
+
+.img-top {
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.img-bottom {
+  z-index: 1;
+  top: 50px;
+  left: 100px; /* This creates the offset overlap */
+}
+
+
+.footer-container {
+  background-color: #EDEFEE; /* Light grey from wireframe */
+  padding: 60px 10%;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 equal columns */
+  gap: 40px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+}
+
+.footer-column h5 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 800;
+  color: #495E57;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+  font-family: 'Karla', sans-serif;
+  color: #333333;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+
+/* --- FINAL BOOKING & SUCCESS STYLES --- */
+
+.booking-container {
+  max-width: 800px;
+  margin: 120px auto 60px auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.booking-container h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 3.5rem;
+  color: #495E57;
+  margin-bottom: 30px;
+}
+
+/* THE SUMMARY CARD (Fixes Step 2) */
+.summary-card {
+  background-color: #EDEFEE; /* Light grey background */
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 450px;
+  margin: 0 auto 40px auto;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 10px solid #F4CE14; /* Brand yellow accent */
+}
+
+.summary-card p {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.1rem;
+  color: #495E57;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between; /* Keeps labels left and values right */
+  border-bottom: 1px solid #d1d3d2;
+  padding-bottom: 5px;
+}
+
+.summary-card p strong {
+  color: #333333;
+}
+
+/* BUTTON GROUPING (Fixes the messy button alignment) */
+.btn-group {
+  display: flex;
+  flex-direction: column; /* Stacks buttons vertically */
+  align-items: center;
+  gap: 15px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* Primary Button is already defined, let's ensure it's wide enough */
+.btn-group .btn-primary {
+  width: 100%;
+}
+
+/* Secondary Button (Back to Edit) */
+.btn-secondary {
+  background: none;
+  border: none;
+  color: #495E57;
+  text-decoration: underline;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-secondary:hover {
+  color: #333333;
+}
+
+/* SUCCESS PAGE IMAGE */
+.success-img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
+  /* Basic pop-in animation */
+  animation: success-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes success-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* PROGRESS BAR TWEAKS */
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #495E57;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  background-color: #ffffff;
+  color: #495E57;
+}
+
+.step-circle.active {
+  background-color: #F4CE14;
+  border-color: #F4CE14;
+  color: #495E57;
+}
+
+.step-line {
+  width: 60px;
+  height: 3px;
+  background-color: #495E57;
+  margin: 0 5px;
+}
+.styled-form {
+  display: flex;
+  flex-direction: column; /* This forces the vertical stack */
+  max-width: 450px;       /* Match the width of your summary card */
+  margin: 0 auto;         /* Centers the form in the page */
+  text-align: left;       /* Keeps labels above inputs */
+  gap: 20px;              /* Consistent spacing between form groups */
+}
+
+.styled-form label {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  color: #495E57;
+  margin-bottom: -12px;   /* Pulls labels closer to their inputs */
+}
+
+.styled-form input, 
+.styled-form select {
+  width: 100%;            /* Ensures inputs fill the container width */
+  padding: 12px;
+  border: 1px solid #495E57;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Karla', sans-serif;
+}
+
+/* Error styling for validation */
+.input-error {
+  border: 2px solid #e63946 !important;
+}
+
+.error-msg {
+  color: #e63946;
+  font-size: 0.8rem;
+  margin-top: -15px;
+}
+
+/* Ensure the button stays full width */
+.styled-form .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+}
+.input-error {
+  border: 2px solid #e63946 !important; /* Red border */
+  background-color: #fff5f5;
+}
+
+.error-msg {
+  color: #e63946;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: -15px; /* Pulls it closer to the input */
+  display: block;
+}
