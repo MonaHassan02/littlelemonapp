@@ -85,3 +85,56 @@ background-color: #ffffff;
 .nav-logo img:hover {
     opacity: 0.9;
 }
+/* Mobile Styling */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    /* Hide the links by default on mobile */
+    .nav-links {
+        position: absolute;
+        top: 80px; /* Adjust based on your header height */
+        left: -100%;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        gap: 20px;
+        padding: 40px 0;
+        z-index: 1000;
+    }
+
+    /* Show links when active */
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Hamburger Icon Styling */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #495E57;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    /* Animation to turn bars into an "X" */
+    .bar.open:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .bar.open:nth-child(2) { opacity: 0; }
+    .bar.open:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+}
+
+/* Hide Hamburger on Desktop */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}

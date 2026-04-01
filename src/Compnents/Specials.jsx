@@ -4,19 +4,26 @@ import bruschettaImg from '../assets/images/bruschettaImg.jpg'
 import lemonDessertImg from '../assets/images/lemondessert.jpg'
 
 import '../App.css'
+
 const SpecialCard = ({ image, title, price, description }) => (
-    <article className="special-card">
-      <img src={image} alt={title} className="card-img" />
-      <div className="card-content">
-        <div className="card-header">
-          <h3>{title}</h3>
-          <span className="price">{price}</span>
-        </div>
-        <p>{description}</p>
-        <button className="order-btn">Order a delivery <span></span></button>
+  <article className="special-card">
+    <img src={image} alt={title} className="card-img" />
+    <div className="card-content">
+      <div className="card-header">
+        <h3>{title}</h3>
+        <span className="price">{price}</span>
       </div>
-    </article>
-  );
+      <p>{description}</p>
+      {/* Added aria-label for accessibility points */}
+      <button 
+        className="order-btn" 
+        aria-label={`Order a delivery of ${title}`}
+      >
+        Order a delivery
+      </button>
+    </div>
+  </article>
+);
 const Specials = () => {
   return (
     <>

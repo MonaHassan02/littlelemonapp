@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css'
+import '../App.css';
 
 const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
     const [resData, setResData] = useState({
@@ -11,7 +11,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
     });
     const [touched, setTouched] = useState(false);
 
-    // Validation Logic
+    // Validation Logic (JavaScript side)
     const isNameValid = resData.fullName.trim().length >= 3;
     const isDateValid = resData.date !== '';
     const isGuestsValid = resData.guests >= 1 && resData.guests <= 10;
@@ -30,12 +30,18 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
 
     return (
         <form onSubmit={handleSubmit} className="styled-form" aria-label="Booking form">
+            
             {/* 1. FULL NAME */}
             <label htmlFor="full-name">Full Name</label>
             <input 
-                type="text" id="full-name" placeholder=" Enter Your Full Name"
+                type="text" 
+                id="full-name" 
+                placeholder="Enter Your Full Name"
+                required 
+                minLength="3"
                 value={resData.fullName} 
                 onChange={(e) => setResData({...resData, fullName: e.target.value})}
+                onBlur={() => setTouched(true)}
                 className={touched && !isNameValid ? "input-error" : ""}
             />
             {touched && !isNameValid && <span className="error-msg">Name must be at least 3 characters.</span>}
@@ -43,12 +49,15 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             {/* 2. DATE */}
             <label htmlFor="res-date">Choose date</label>
             <input 
-                type="date" id="res-date" 
+                type="date" 
+                id="res-date" 
+                required
                 value={resData.date} 
                 onChange={(e) => {
                     setResData({ ...resData, date: e.target.value });
                     dispatch({ type: 'UPDATE_TIMES', date: e.target.value });
                 }}
+                onBlur={() => setTouched(true)}
                 className={touched && !isDateValid ? "input-error" : ""} 
             />
             {touched && !isDateValid && <span className="error-msg">Please select a date.</span>}
@@ -57,6 +66,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             <label htmlFor="res-time">Choose time</label>
             <select 
                 id="res-time" 
+                required
                 value={resData.time} 
                 onChange={(e) => setResData({...resData, time: e.target.value})}
             >
@@ -66,9 +76,15 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             {/* 4. GUESTS */}
             <label htmlFor="guests">Number of guests</label>
             <input 
-                type="number" id="guests" min="1" max="10" 
+                type="number" 
+                id="guests" 
+                placeholder="1"
+                min="1" 
+                max="10" 
+                required
                 value={resData.guests} 
                 onChange={(e) => setResData({...resData, guests: e.target.value})}
+                onBlur={() => setTouched(true)}
                 className={touched && !isGuestsValid ? "input-error" : ""} 
             />
             {touched && !isGuestsValid && <span className="error-msg">Please enter between 1 and 10 guests.</span>}
@@ -90,7 +106,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
                 type="submit" 
                 className="btn-primary" 
                 aria-label="On Click"
-                disabled={touched && !isFormValid}
+                disabled={!isFormValid && touched}
             >
                 Next: Confirm Details
             </button>
