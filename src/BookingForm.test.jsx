@@ -1,10 +1,11 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import BookingForm from './BookingForm';
-
+import BookingForm from './Compnents/BookingForm';
+import { test, expect } from 'vitest';
+import "@testing-library/jest-dom";
 // Step 1: Test for static text
 test('Renders the BookingForm heading', () => {
     render(<BookingForm availableTimes={["17:00"]} />);
-    const headingElement = screen.getByText("Reserve a Table");
+    const headingElement = screen.getByText("Next: Confirm Details")
     expect(headingElement).toBeInTheDocument();
 });
 

@@ -1,4 +1,5 @@
-import { initializeTimes, updateTimes } from './App';
+import { initializeTimes, updateTimes } from './Compnents/bookingReducer';
+import { test, expect } from 'vitest';
 
 // Step 1 & 2: Test initializeTimes
 test('initializeTimes returns a non-empty array of times', () => {

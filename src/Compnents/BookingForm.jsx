@@ -106,8 +106,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
                 type="submit" 
                 className="btn-primary" 
                 aria-label="On Click"
-                disabled={!isFormValid && touched}
-            >
+                disabled={!isFormValid}            >
                 Next: Confirm Details
             </button>
         </form>
